@@ -4,6 +4,10 @@ url:
 modified: '2026-03-21'
 apis: []
 common:
+  - type: GitHubOrganization
+    url: https://github.com/graybar
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/graybar
   - type: Website
     url: https://www.graybar-electric.com
 description: >-
