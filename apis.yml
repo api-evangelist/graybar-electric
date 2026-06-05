@@ -1,4 +1,6 @@
 aid: graybar-electric
+tags:
+  - Fortune 500
 url: 
   https://raw.githubusercontent.com/api-evangelist/graybar-electric/refs/heads/main/apis.yml
 modified: '2026-03-21'
