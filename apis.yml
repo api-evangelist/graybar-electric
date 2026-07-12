@@ -6,6 +6,8 @@ url:
 modified: '2026-03-21'
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/graybar-electric-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/graybar
   - type: LinkedIn
