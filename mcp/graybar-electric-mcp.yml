@@ -1,0 +1,28 @@
+generated: '2026-08-28'
+method: searched
+status: none
+source: >-
+  Searched for a first-party Graybar MCP server across graybar.com, the
+  apiportal-snd.graybar.com Azure API Management portal, the github.com/graybar
+  organization (0 public repositories), and npm/PyPI/RubyGems/NuGet (no package matching
+  "graybar" from any Graybar-affiliated publisher), 2026-08-28.
+note: >-
+  No MCP server exists and none could be derived. Deriving a candidate tool list requires
+  an OpenAPI to bind tools to, and Graybar publishes no machine-readable contract — the
+  portal's anonymous API catalog (/developer/apis) returns an empty value[]. No apis.yml
+  MCPServer pointer is emitted, because there is no server to point at.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+evidence:
+  - url: https://apiportal-snd.graybar.com/developer/apis?api-version=2022-04-01-preview
+    status: 200
+    finding: 'empty catalog: {"value":[],"nextLink":null}'
+  - url: https://api.github.com/orgs/graybar/repos
+    status: 200
+    finding: organization exists, zero public repositories

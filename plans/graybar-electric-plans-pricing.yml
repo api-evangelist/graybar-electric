@@ -1,0 +1,42 @@
+generated: '2026-08-28'
+method: probed
+source: https://apiportal-snd.graybar.com/developer/products?api-version=2022-04-01-preview
+http_status: 200
+plan_count: 1
+note: >-
+  Graybar publishes no API pricing page. The single plan below was read from the live,
+  unauthenticated product catalog of Graybar's own Azure API Management developer portal.
+  IMPORTANT CAVEAT: "Starter" is the product Azure API Management provisions by default,
+  and its name, description and quota are Microsoft's stock values rather than terms
+  Graybar authored. It is recorded because it is what an anonymous developer actually
+  sees at Graybar's portal today, not because Graybar has published a commercial plan.
+  The product contains zero APIs (/developer/products/starter/apis returns an empty
+  value[]), so subscribing to it grants access to nothing that is publicly listed.
+plans:
+  - name: Starter
+    id: starter
+    price: null
+    currency: null
+    billing_period: null
+    description: >-
+      Subscribers will be able to run 5 calls/minute up to a maximum of 100 calls/week.
+    subscription_required: true
+    approval_required: false
+    subscriptions_limit: 1
+    included_quota:
+      requests_per_minute: 5
+      requests_per_week: 100
+    overage: null
+    terms: null
+    apis_included: 0
+    source: https://apiportal-snd.graybar.com/developer/products?api-version=2022-04-01-preview
+    verbatim: true
+    provenance: >-
+      Azure API Management default product; description string is Microsoft's stock text,
+      served from a Graybar-controlled host.
+enterprise_only: true
+enterprise_note: >-
+  Graybar's documented integration surfaces — EDI, XML and PunchOut system-to-system
+  integration — carry no published price. Both provider fliers close with "Contact your
+  local Graybar sales representative today!", so commercial terms are set in a sales
+  conversation.

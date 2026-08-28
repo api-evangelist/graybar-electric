@@ -1,0 +1,31 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  Registry searches on 2026-08-28 against registry.npmjs.org, pypi.org, rubygems.org and
+  nuget.org, plus the github.com/graybar organization and the apiportal-snd.graybar.com
+  developer portal.
+package_count: 0
+packages: []
+note: >-
+  Graybar publishes no client libraries. Verified absence, not an unchecked gap: npm search
+  for "graybar" returned zero packages, pypi.org/pypi/graybar/json returned 404,
+  rubygems.org search returned an empty array, and the NuGet query API reported
+  totalHits 0. The github.com/graybar organization exists (id 21368624) but has zero public
+  repositories. No SDK, CLI or SourceCode link appears anywhere in apis.yml or on the
+  developer portal, so there was nothing to derive a candidate from either. No SDKs pointer
+  is emitted in apis.yml.
+evidence:
+  - url: https://registry.npmjs.org/-/v1/search?text=graybar&size=20
+    status: 200
+    finding: zero results
+  - url: https://pypi.org/pypi/graybar/json
+    status: 404
+  - url: https://rubygems.org/api/v1/search.json?query=graybar
+    status: 200
+    finding: empty array
+  - url: https://azuresearch-usnc.nuget.org/query?q=graybar&take=10
+    status: 200
+    finding: totalHits 0
+  - url: https://api.github.com/orgs/graybar/repos
+    status: 200
+    finding: zero public repositories

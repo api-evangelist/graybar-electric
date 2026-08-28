@@ -1,34 +1,111 @@
 aid: graybar-electric
 name: "Graybar Electric"
 specificationVersion: '0.23'
+description: >-
+  Graybar Electric Company is an employee-owned Fortune 500 distributor of electrical,
+  communications, and data networking products and a provider of related supply chain
+  management and logistics services. Graybar serves contractors, industrial plants,
+  utilities, institutions and commercial customers across North America through a network
+  of distribution centers and branches, and supports customer e-procurement through EDI,
+  XML and PunchOut system-to-system integration. Graybar operates an Azure API Management
+  developer portal at apiportal-snd.graybar.com, but publishes no API to anonymous
+  visitors: the portal's API catalog is empty without a sign-in.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/graybar-electric.png
+created: '2026-03-21'
+modified: '2026-08-28'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/graybar-electric/refs/heads/main/apis.yml
+tags:
+  - Fortune 500
+  - Distribution
+  - Electrical
+  - Data Networking
+  - Supply Chain
+  - Logistics
+  - B2B eCommerce
+  - EDI
+  - PunchOut
+  - Industrial
 accessModel:
   pricing: unknown
-  onboarding: unknown
+  onboarding: signup-required
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/graybar-electric.png
-tags:
-  - Fortune 500
-url: 
-  https://raw.githubusercontent.com/api-evangelist/graybar-electric/refs/heads/main/apis.yml
-modified: '2026-03-21'
-apis: []
+  label: Gated
+  confidence: medium
+  source:
+    - https://apiportal-snd.graybar.com/signin
+    - https://apiportal-snd.graybar.com/developer/apis?api-version=2022-04-01-preview
+  generated: '2026-08-28'
+  method: probed
+maintainers:
+  - FN: API Evangelist
+    email: info@apievangelist.com
+apis:
+  - aid: graybar-electric-api-portal
+    name: Graybar API Portal
+    description: >-
+      Graybar's Azure API Management developer portal. The portal is publicly reachable and
+      serves a sign-in/sign-up flow and a single published product ("Starter", the Azure
+      APIM default), but the anonymous API catalog is empty — no API definition, reference
+      or specification is visible without an authenticated developer account.
+    humanURL: https://apiportal-snd.graybar.com/
+    tags:
+      - Developer Portal
+      - Azure API Management
+    properties:
+      - type: DeveloperPortal
+        url: https://apiportal-snd.graybar.com/
+      - type: SignUp
+        url: https://apiportal-snd.graybar.com/signup
+      - type: Login
+        url: https://apiportal-snd.graybar.com/signin
+      - type: Plans
+        url: plans/graybar-electric-plans-pricing.yml
+      - type: RateLimits
+        url: rate-limits/graybar-electric-rate-limits.yml
 common:
-  - type: DomainSecurity
-    url: security/graybar-electric-domain-security.yml
+  - type: Website
+    url: https://www.graybar.com
   - type: GitHubOrganization
     url: https://github.com/graybar
   - type: LinkedIn
     url: https://www.linkedin.com/company/graybar
-  - type: Website
-    url: https://www.graybar-electric.com
-description: >-
-  Graybar Electric is a leading distributor of electrical, communications, and data
-  networking products and a provider of related supply chain management and logistics
-  services.
+  - type: Support
+    url: https://www.graybar.com/contact-us
+  - type: Blog
+    url: https://www.graybar.com/news
+  - type: TermsOfService
+    url: https://www.graybar.com/website-terms-of-use
+  - type: PrivacyPolicy
+    url: https://www.graybar.com/privacy-policy
+  - type: DomainSecurity
+    url: security/graybar-electric-domain-security.yml
+  - type: LLMsTxt
+    url: llms/graybar-electric-llms.txt
+x-enrichment:
+  date: '2026-08-28'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Graybar runs its own Azure API Management developer portal at apiportal-snd.graybar.com,
+    and search engines have indexed descriptions of real APIs on it (material availability
+    by location, orders and quotes for a customer, frequently-purchased materials), but the
+    portal's anonymous API catalog returns an empty list and /developer/identity returns 401
+    — every API definition, reference and specification sits behind a developer-account
+    sign-in, so nothing is readable without credentials.
+  evidence:
+    - url: https://apiportal-snd.graybar.com/developer/apis?api-version=2022-04-01-preview
+      status: 200
+    - url: https://apiportal-snd.graybar.com/developer/identity?api-version=2022-04-01-preview
+      status: 401
+    - url: https://apiportal-snd.graybar.com/signin
+      status: 200
+    - url: https://b2b.graybar.com/
+      status: 0
+  checked: '2026-08-28'

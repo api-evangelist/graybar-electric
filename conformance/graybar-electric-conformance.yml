@@ -1,0 +1,75 @@
+generated: '2026-08-28'
+method: searched
+source: >-
+  graybar.com, the two Graybar-published integration fliers linked from graybar.com, and
+  the apiportal-snd.graybar.com Azure API Management developer portal, probed 2026-08-28.
+note: >-
+  Graybar publishes no machine-readable contract, so no cross-cutting API standard can be
+  asserted or refuted from a spec. Every entry below is recorded against the provider's own
+  published material only. Graybar's market (industrial/electrical distribution B2B
+  procurement) does have real domain standards — X12/EDIFACT EDI and cXML/OCI PunchOut —
+  and Graybar markets both, but neither is DECLARED in a contract we can read, so
+  domain_standard_conformance is recorded as unverified rather than conformant. This is a
+  reward-only dimension: an unverified entry is not a penalty and nothing is invented to
+  fill it.
+standards:
+  - id: openapi
+    conforms: false
+    evidence:
+      - url: https://apiportal-snd.graybar.com/developer/apis?api-version=2022-04-01-preview
+        status: 200
+        finding: anonymous API catalog returns an empty value[]; no OpenAPI is published
+      - url: https://www.graybar.com/openapi.json
+        status: 404
+  - id: oauth2
+    conforms: false
+    evidence:
+      - url: https://apiportal-snd.graybar.com/.well-known/oauth-authorization-server
+        status: 404
+      - url: https://www.graybar.com/.well-known/openid-configuration
+        status: 404
+    note: >-
+      Azure API Management's default credential model is a subscription key
+      (Ocp-Apim-Subscription-Key). No OAuth 2.0 metadata document is served on any host.
+  - id: rfc9457
+    conforms: false
+    evidence:
+      - url: https://apiportal-snd.graybar.com/developer/apis?api-version=2022-04-01-preview
+        status: 200
+        finding: no contract published, so no problem+json response media type to evaluate
+domain_standards:
+  - id: x12-edi
+    name: ASC X12 / EDI business documents
+    conforms: unverified
+    declared_in: provider marketing PDF, not a contract
+    evidence:
+      - url: https://res.cloudinary.com/dngevqko7/image/upload/v1770693462/graybar-electronic-system-integration-flier.pdf
+        status: 200
+        finding: >-
+          "Graybar utilizes EDI, XML and other proprietary data formats to exchange business
+          information and documents with our customers." The flier names the supported
+          business documents by NAME, not by X12 transaction-set number: planning schedule
+          with release capability, request for quotation, customer purchase order, purchase
+          order acknowledgement, advanced shipping notice, customer change order, Graybar
+          invoice, electronic funds transfer, system data acknowledgement, rejection notice,
+          response to quote. No transaction-set numbers are stated by Graybar and none are
+          inferred here.
+      - url: https://b2b.graybar.com/
+        status: '<no response>'
+        finding: >-
+          b2b.graybar.com CNAMEs to as2.graybar.com (20.97.54.9), an AS2 EDI transport host.
+          Connection refused on 443 and 80 — reachable only by provisioned trading partners,
+          which is normal and correct for AS2 but means the surface cannot be verified.
+  - id: punchout
+    name: PunchOut catalog (cXML / OCI class of standard)
+    conforms: unverified
+    declared_in: provider marketing PDF, not a contract
+    evidence:
+      - url: https://res.cloudinary.com/dngevqko7/image/upload/v1770689522/graybar-punchout-flier.pdf
+        status: 200
+        finding: >-
+          "Use your procurement system to connect to Graybar.com and access the products you
+          need to add to your requisition list... Graybar is able to support multiple levels
+          of PunchOut." Graybar does not name cXML or OCI anywhere in the flier, and no
+          PunchOut setup URL, session request schema or transport endpoint is published, so
+          the specific protocol is NOT asserted here.

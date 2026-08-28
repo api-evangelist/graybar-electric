@@ -1,13 +1,21 @@
-generated: '2026-07-11'
+generated: '2026-08-28'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
-- host: www.graybar-electric.com
-  https: false
+- host: www.graybar.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Oct 31 20:41:07 2026 GMT
+  hsts: null
+- host: apiportal-snd.graybar.com
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Oct 31 20:41:07 2026 GMT
+  hsts: null
 domains:
-- domain: graybar-electric.com
-  dnssec: false
+- domain: graybar.com
+  dnssec: true
   caa: []
-  spf: false
+  spf: true
   dmarc: true
   dmarc_policy: reject

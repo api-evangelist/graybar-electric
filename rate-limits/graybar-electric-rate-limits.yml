@@ -1,0 +1,34 @@
+generated: '2026-08-28'
+method: probed
+source: https://apiportal-snd.graybar.com/developer/products?api-version=2022-04-01-preview
+http_status: 200
+limit_count: 1
+note: >-
+  Graybar publishes no rate-limit documentation. The limit below was read from the live,
+  unauthenticated product catalog of Graybar's Azure API Management developer portal.
+  CAVEAT: this is the quota attached to Azure APIM's default "Starter" product and the
+  wording is Microsoft's stock text, not a limit Graybar authored or documented. No
+  response headers could be observed because no API is publicly listed on the portal and
+  no gateway base URL is published, so there is no unauthenticated endpoint to call.
+limits:
+  - scope: per-subscription
+    plan: Starter
+    window: 1m
+    limit: 5
+    unit: requests
+    burst: null
+    source: https://apiportal-snd.graybar.com/developer/products?api-version=2022-04-01-preview
+  - scope: per-subscription
+    plan: Starter
+    window: 7d
+    limit: 100
+    unit: requests
+    burst: null
+    source: https://apiportal-snd.graybar.com/developer/products?api-version=2022-04-01-preview
+response_headers:
+  observed: []
+  documented: []
+  note: >-
+    Not observed. Azure API Management does not emit RateLimit-* headers unless a policy
+    is configured to, and no callable Graybar endpoint is publicly reachable to test.
+exhaustion_status_code: null
