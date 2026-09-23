@@ -1,7 +1,9 @@
 ---
 title: Graybar names a new executive for AI, digital transformation
 url: https://www.digitalcommerce360.com/2025/07/02/graybar-new-executive-ai-digital-transformation-ecommerce-growth/
-date: '2026-05-25'
+published: '2025-07-02'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"Graybar Electric" press release artificial intelligence'
 position: 2
 source: serpapi-google
