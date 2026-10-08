@@ -40,3 +40,15 @@ enterprise_note: >-
   integration — carry no published price. Both provider fliers close with "Contact your
   local Graybar sales representative today!", so commercial terms are set in a sales
   conversation.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Starter
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
