@@ -84,6 +84,10 @@ apis:
   - type: RateLimits
     url: rate-limits/graybar-electric-rate-limits.yml
 common:
+- type: Plans
+  url: plans/graybar-electric-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/graybar-electric-rate-limits.yml
 - type: Pricing
   url: https://apiportal-snd.graybar.com/developer/products?api-version=2022-04-01-preview
 - type: Website
